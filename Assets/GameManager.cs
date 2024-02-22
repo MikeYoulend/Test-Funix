@@ -14,22 +14,19 @@ public class GameManager : MonoBehaviour
         }
        
     }
-
     public void StopGame()
     {
         
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject obstacleSpawn = GameObject.FindObjectOfType<SpawnPoint>().gameObject;
-        GameObject bonusSpawn = GameObject.FindObjectOfType<BonusSpawnPoint>().gameObject;
+
         
         if (player != null)
         {
             Movement playerMovement = player.GetComponent<Movement>();
             if (playerMovement != null)
             {   
-                obstacleSpawn.SetActive(false);
-                bonusSpawn.SetActive(false);
-                playerMovement.enabled = false;
+                
+                Time.timeScale = 0;
             }
         }
     }

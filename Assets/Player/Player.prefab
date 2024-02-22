@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7596198406123237742}
   - component: {fileID: 7721444898457909921}
   - component: {fileID: 1512869181416623921}
+  - component: {fileID: 6779486136251445809}
   - component: {fileID: 7949727911011509491}
+  - component: {fileID: 3039101940915871276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,6 +100,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+--- !u!114 &6779486136251445809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898701911474754866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ec9155509a8704f88d4241abec58df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverCanvas: {fileID: 0}
 --- !u!65 &7949727911011509491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3039101940915871276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898701911474754866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9364fdf874c297a40b97784f81e6d60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
