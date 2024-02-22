@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColliderHandler : MonoBehaviour
 {
-    public bool ObstacleLeft = true;
+    [SerializeField]bool ObstacleLeft = true;
 
 
      void OnTriggerEnter(Collider other) {

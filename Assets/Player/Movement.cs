@@ -31,13 +31,18 @@ public class Movement : MonoBehaviour
        transform.Translate(xValue, 0, zValue);
     }
 
-  void OnTriggerEnter(Collider other) 
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Obstacle") 
+        StartEnding(other);
+    }
+
+    private void StartEnding(Collider other)
+    {
+        if (other.gameObject.tag == "Obstacle")
         {
             lifepoints.ReduceHealth(HealthPerHit);
-            if(lifepoints.life < 1)
-            {   
+            if (lifepoints.life < 1)
+            {
                 GameManager.Instance.StopGame();
             }
         }

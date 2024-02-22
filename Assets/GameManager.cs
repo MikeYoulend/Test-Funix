@@ -15,15 +15,9 @@ public class GameManager : MonoBehaviour
        
     }
 
-    // Metodo per fermare il gioco e mostrare il gameover
     public void StopGame()
     {
-        // Ottieni il punteggio finale dal Scoreboard
-       
         
-        // Mostra il gameover screen e passa il punteggio finale
-        
-        // Disabilita o distruggi gli oggetti che contengono gli script MovingObstacle e SpawnPoint
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject obstacleSpawn = GameObject.FindObjectOfType<SpawnPoint>().gameObject;
         GameObject bonusSpawn = GameObject.FindObjectOfType<BonusSpawnPoint>().gameObject;
@@ -32,14 +26,11 @@ public class GameManager : MonoBehaviour
         {
             Movement playerMovement = player.GetComponent<Movement>();
             if (playerMovement != null)
-            {
+            {   
+                obstacleSpawn.SetActive(false);
+                bonusSpawn.SetActive(false);
                 playerMovement.enabled = false;
             }
         }
-        
-        obstacleSpawn.SetActive(false);
-        bonusSpawn.SetActive(false);
-        
-        
     }
 }
