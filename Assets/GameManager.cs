@@ -4,42 +4,42 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-     public static GameManager Instance;
+    public static GameManager Instance;
     
-   void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+       
     }
 
-    // Metodo per fermare il gioco
-   public void StopGame()
-{
-    // Disabilita o distruggi gli oggetti che contengono gli script MovingObstacle e SpawnPoint
-
-    GameObject player = GameObject.FindGameObjectWithTag("Player");
-    GameObject obstacleSpawn = GameObject.FindObjectOfType<SpawnPoint>().gameObject;
-    GameObject BonusSpawn = GameObject.FindObjectOfType<BonusSpawnPoint>().gameObject;
-   
-
-    if (player != null)
+    // Metodo per fermare il gioco e mostrare il gameover
+    public void StopGame()
     {
-        Movement playerMovement = player.GetComponent<Movement>();
-
-        if (playerMovement != null)
+        // Ottieni il punteggio finale dal Scoreboard
+       
+        
+        // Mostra il gameover screen e passa il punteggio finale
+        
+        // Disabilita o distruggi gli oggetti che contengono gli script MovingObstacle e SpawnPoint
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject obstacleSpawn = GameObject.FindObjectOfType<SpawnPoint>().gameObject;
+        GameObject bonusSpawn = GameObject.FindObjectOfType<BonusSpawnPoint>().gameObject;
+        
+        if (player != null)
         {
-            playerMovement.enabled = false;
+            Movement playerMovement = player.GetComponent<Movement>();
+            if (playerMovement != null)
+            {
+                playerMovement.enabled = false;
+            }
         }
+        
+        obstacleSpawn.SetActive(false);
+        bonusSpawn.SetActive(false);
+        
+        
     }
-    
-    obstacleSpawn.SetActive(false);
-    BonusSpawn.SetActive(false);
-    
-}
 }

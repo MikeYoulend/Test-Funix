@@ -7,7 +7,9 @@ public class Movement : MonoBehaviour
 {   
 
     LifePoint lifepoints;
-    [SerializeField] int HealthPerHit = 1;
+   
+
+    int HealthPerHit = 1;
     [Tooltip("How fast you move")] [SerializeField] float moveSpeed = 10f;
     
     // Start is called before the first frame update
@@ -35,7 +37,7 @@ public class Movement : MonoBehaviour
         {
             lifepoints.ReduceHealth(HealthPerHit);
             if(lifepoints.life < 1)
-            {
+            {   
                 GameManager.Instance.StopGame();
             }
         }
